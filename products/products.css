@@ -1,6 +1,11 @@
 .outer-container {
     padding: 20px;
 }
+.product-display {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:left;
+}
 .product-box {
     width: 200px;
     border: solid 1px black;
