@@ -1,0 +1,16 @@
+.outer-container {
+    padding: 20px;
+}
+.product-box {
+    width: 200px;
+    border: solid 1px black;
+    padding:10px;
+    text-align: center;
+}
+.product-box img {
+    max-width: 90%;
+    margin: 5px auto;
+}
+.product-box p{
+    text-align: left;
+}
