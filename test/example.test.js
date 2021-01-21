@@ -161,7 +161,7 @@ test('should receive a cart item and return a completed table row DOM element', 
 
 
     // Set up your arguments and expectations
-    const expected = `<tr><td><img src="../assets/ikarie.jpg"></td><td>Ikarie Stereo Filter</td><td>3</td><td>$777.00</td></tr>`;
+    const expected = `<tr><td><img src="../assets/ikarie.jpg"></td><td>BASTL Ikarie Stereo Filter</td><td>3</td><td>$777.00</td></tr>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
