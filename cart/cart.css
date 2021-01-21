@@ -1,0 +1,48 @@
+body {
+    color: black;
+}
+.shopping-cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+table {
+    width: 600px;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: white;
+    border: solid 7px grey;
+}
+th, td {
+    border: solid 2px black;
+    padding: 10px;
+    vertical-align: middle;
+}
+td {
+    font-size: 20px;
+}
+th {
+    font-size: 20px;
+    font-weight: 700;
+}
+table img {
+    max-width: 100px;
+    /* border: 1px solid black; */
+}
+h2 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+button {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+    border: solid 2px grey;
+}
+button:hover {
+    border: solid 4px grey;
+    box-shadow: 0px 0px 5px white;
+}
