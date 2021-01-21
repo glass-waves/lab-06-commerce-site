@@ -1,7 +1,7 @@
 import { modules } from '../products/modules.js';
 import { cart } from './cart-data.js';
 import { renderTableRows } from './render-table-row.js';
-import { calcCartTotal, findById } from './utils.js';
+import { calcCartTotal} from './utils.js';
 
 const cartTable = document.getElementById('cart-table');
 const totalRow = document.createElement('tr');
@@ -30,5 +30,5 @@ for (let item of cart) {
 }
 
 orderButton.addEventListener('click', () =>{
-    alert(`Thank you for your order of ${totalNumberOfItems} items. Your total is $${cartTotal}.`)
+    alert(`Thank you for your order of ${totalNumberOfItems} items. Your total is $${cartTotal}.`);
 });

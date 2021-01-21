@@ -1,9 +1,9 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { renderModules } from "../products/render.js";
-import { modules } from "../products/modules.js";
-import { calcCartTotal, calcSubTotal, findById } from "../cart/utils.js";
-import { renderTableRows } from "../cart/render-table-row.js";
+import { renderModules } from '../products/render.js';
+// import { modules } from '../products/modules.js';
+import { calcCartTotal, calcSubTotal, findById } from '../cart/utils.js';
+import { renderTableRows } from '../cart/render-table-row.js';
 const test = QUnit.test;
 
 test('should receive a module object and return a div element', (expect) => {
