@@ -34,10 +34,20 @@ if (cart.length === 0) {
 } else {
     //ADD EVENT LISTENER TO ORDER BUTTON
     orderButton.addEventListener('click', () =>{
+        const updatedCart = getCart();
         //CALCULATE CART TOTAL FROM STORED CART AND MODULE LIST
-        const cartTotal = calcCartTotal(cart, modules);
+        const cartTotal = calcCartTotal(updatedCart, modules);
+        //CONSTRUCT PRODUCT LIST STRING
+        let orderString = '';
+        for (let item = 0; item < updatedCart.length; item++) {
+            if (item === updatedCart.length - 1){
+                orderString += `and ${updatedCart[item].quantity} ${updatedCart[item].id}`;
+            } else {
+                orderString += `${updatedCart[item].quantity} ${updatedCart[item].id}, `;
+            }
+        }
         //ALERT USER OF CART CONTENTS AND TOTAL
-        alert(`Thank you for your order of ${totalNumberOfItems} items. Your cart contains ${JSON.stringify(cart, true, 2)} total is $${cartTotal}.`);
+        alert(`Thank you for your order of ${totalNumberOfItems} items. Your cart contains ${orderString} and your total is $${cartTotal}.`);
         //REMOVE CART FROM LOCAL STORAGE
         localStorage.removeItem('CART');
         //REDIRECT USER TO HOME PAGE
