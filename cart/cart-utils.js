@@ -40,13 +40,13 @@ export function addToCart(id) {
     setCart(cart);
 }
 
-export function removeFromCart(id) {
-    const cart = getCart();
+export function removeFromCart(id, cart) {
     let cartItem = findById(id, cart);
     const index = cart.indexOf(cartItem);
     cart.splice(index, 1);
+    console.log(cart);
     setCart(cart); 
-    // window.location = '../products/products.html';
+    window.location = '../products/products.html';
 }
 
 export function retrieveQuantity(module) {
