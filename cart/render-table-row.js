@@ -1,8 +1,8 @@
 import { findById } from './utils.js';
 // import { cart } from './cart-data.js';
 import { modules } from '../products/modules.js';
-import { calcSubTotal } from './utils.js';
-import { removeFromCart } from './cart-utils.js';
+import { calcSubTotal, calcCartTotal } from './utils.js';
+import { getCart, removeFromCart } from './cart-utils.js';
 
 export function renderTableRows(cartItem){
     const productRow = document.createElement('tr');
@@ -45,5 +45,17 @@ export function renderTableRows(cartItem){
 
 }
 export function renderTotalRow() {
-    
+    const totalRow = document.createElement('tr');
+    const totalTd = document.createElement('td');
+    const empty1 = document.createElement('td');
+    const empty2 = document.createElement('td');
+    const empty3 = document.createElement('td');
+
+    const cart = getCart();
+    let cartTotal = calcCartTotal(cart, modules);
+
+    totalTd.textContent = `Cart Total: $${cartTotal}`;
+    totalRow.append(empty1, empty2, empty3, totalTd);
+
+    return totalRow;
 }
