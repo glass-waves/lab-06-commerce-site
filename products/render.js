@@ -1,5 +1,5 @@
-import { addToCart } from '../cart/cart-utils.js';
-import { findById } from '../cart/utils.js';
+import { addToCart, retrieveQuantity } from '../cart/cart-utils.js';
+
 
 
 export function renderModules(module) {
@@ -41,9 +41,14 @@ export function renderModules(module) {
     addButton.setAttribute('value', module.id);
     addButton.textContent = 'Add to Cart';
 
+    const quantityBox = document.createElement('p');
+    quantityBox.classList.add('quantityBox');
+    quantityBox.textContent = retrieveQuantity(module);
+    box.append(quantityBox);
 
     addButton.addEventListener('click', () => {
         addToCart(module.id);
+        quantityBox.textContent = retrieveQuantity(module);
     });
 
     box.append(addButton);

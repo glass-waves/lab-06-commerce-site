@@ -39,3 +39,17 @@ export function addToCart(id) {
     }
     setCart(cart);
 }
+
+export function retrieveQuantity(module) {
+    const cart = getCart();
+    let quantity = 0;
+    const itemInCart = findById(module.id, cart);
+    if (!itemInCart) {
+        return quantity;
+
+    } else {
+        quantity = itemInCart.quantity;
+    }
+    
+    return quantity;
+}
