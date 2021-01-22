@@ -1,5 +1,6 @@
 import { modules } from '../products/modules.js';
-import { cart } from './cart-data.js';
+import { getCart } from './cart-utils.js';
+// import { cart } from './cart-data.js';
 import { renderTableRows } from './render-table-row.js';
 import { calcCartTotal } from './utils.js';
 
@@ -12,6 +13,7 @@ const totalTd = document.createElement('td');
 
 const orderButton = document.getElementById('order-button');
 
+const cart = getCart();
 
 for (let item of cart) {
     const row = renderTableRows(item);
@@ -28,7 +30,13 @@ let totalNumberOfItems = 0;
 for (let item of cart) {
     totalNumberOfItems += item.quantity;
 }
+if (cart.length === 0) {
+    orderButton.disabled = true;
+} else {
+    orderButton.addEventListener('click', () =>{
+        localStorage.removeItem('CART');
+        alert(`Thank you for your order of ${totalNumberOfItems} items. Your contains ${JSON.stringify(cart, true, 2)} total is $${cartTotal}.`);
+        window.location = '../';
+    });
+}
 
-orderButton.addEventListener('click', () =>{
-    alert(`Thank you for your order of ${totalNumberOfItems} items. Your total is $${cartTotal}.`);
-});

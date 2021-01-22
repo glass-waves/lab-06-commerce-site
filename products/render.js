@@ -1,3 +1,7 @@
+import { addToCart } from '../cart/cart-utils.js';
+import { findById } from '../cart/utils.js';
+
+
 export function renderModules(module) {
 
     const box = document.createElement('div');
@@ -36,6 +40,12 @@ export function renderModules(module) {
     const addButton = document.createElement('button');
     addButton.setAttribute('value', module.id);
     addButton.textContent = 'Add to Cart';
+
+
+    addButton.addEventListener('click', () => {
+        addToCart(module.id);
+    });
+
     box.append(addButton);
 
     return box;

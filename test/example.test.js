@@ -1,9 +1,13 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 import { renderModules } from '../products/render.js';
-// import { modules } from '../products/modules.js';
 import { calcCartTotal, calcSubTotal, findById } from '../cart/utils.js';
 import { renderTableRows } from '../cart/render-table-row.js';
+import { 
+    getCart,
+    clearCart,
+    setCart } from '../cart/cart-utils.js';
+
 const test = QUnit.test;
 
 test('should receive a module object and return a div element', (expect) => {
@@ -203,4 +207,80 @@ test('should receive a cart and return the total', (expect) => {
     expect.equal(actual, expected);
 });
 
+//TESTS GET CART FUNCTION
+test('calling the function should return cart stored in localStorage', (expect) => {
+    const cart = [{
+        id: 'ikarie',
+        quantity: 3 
+    },
+    {
+        id: 'zadar',
+        quantity: 4
+    }];
 
+    const stringyCart = JSON.stringify(cart);
+    localStorage.setItem('CART', stringyCart);
+
+    const actual = getCart();
+
+    const expected = cart;
+
+    expect.deepEqual(actual, expected);
+});
+
+//TESTS CLEAR CART FUNCTION
+test('calling the function should replace the existing cart with an empty array', (expect) => {
+    const cart = [{
+        id: 'ikarie',
+        quantity: 3 
+    },
+    {
+        id: 'zadar',
+        quantity: 4
+    }];
+
+    const stringyCart = JSON.stringify(cart);
+
+    localStorage.setItem('CART', stringyCart);
+
+    clearCart();
+    
+    const clearedCart = getCart();
+    const actual = clearedCart;
+
+    const expected = [];
+
+    expect.deepEqual(actual, expected);
+});
+
+//TESTS SET CART FUNCTION
+test('calling the function should replace the existing cart with the cart passed as an argument to function', (expect) => {
+    const cart = [{
+        id: 'ikarie',
+        quantity: 3 
+    },
+    {
+        id: 'zadar',
+        quantity: 4
+    }];
+
+    const newCart = [{
+        id: 'ikarie',
+        quantity: 7 
+    },
+    {
+        id: 'zadar',
+        quantity: 9
+    }];
+
+    const stringyOldCart = JSON.stringify(cart);
+    localStorage.setItem('CART', stringyOldCart);
+
+    setCart(newCart);
+
+    const actual = getCart();
+
+    const expected = newCart;
+
+    expect.deepEqual(actual, expected);
+});

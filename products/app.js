@@ -7,3 +7,5 @@ const productContainer = document.getElementById('product-container');
 for (let module of modules) {
     productContainer.append(renderModules(module));
 }
+
+console.log(localStorage.getItem('CART'));
