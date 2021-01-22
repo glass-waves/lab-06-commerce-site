@@ -298,10 +298,6 @@ test('calling the function should remove an instance of the item with the matchi
     }];
 
     const removedCart = [{
-        id: 'ikarie',
-        quantity: 2 
-    },
-    {
         id: 'zadar',
         quantity: 4
     }];
@@ -309,7 +305,7 @@ test('calling the function should remove an instance of the item with the matchi
     const stringyOldCart = JSON.stringify(cart);
     localStorage.setItem('CART', stringyOldCart);
 
-    removeFromCart('ikarie');
+    removeFromCart('ikarie', cart);
 
     const actual = getCart();
 
