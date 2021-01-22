@@ -40,7 +40,7 @@ if (cart.length === 0) {
         //CONSTRUCT PRODUCT LIST STRING
         let orderString = '';
         for (let item = 0; item < updatedCart.length; item++) {
-            if (item === updatedCart.length - 1){
+            if (updatedCart.length > 1 && item === updatedCart.length - 1){
                 orderString += `and ${updatedCart[item].quantity} ${updatedCart[item].id}`;
             } else {
                 orderString += `${updatedCart[item].quantity} ${updatedCart[item].id}, `;
