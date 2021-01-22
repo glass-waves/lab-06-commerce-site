@@ -40,18 +40,19 @@ export function renderModules(module) {
     const addButton = document.createElement('button');
     addButton.setAttribute('value', module.id);
     addButton.textContent = 'Add to Cart';
+    box.append(addButton);
 
     const quantityBox = document.createElement('p');
     quantityBox.classList.add('quantityBox');
-    quantityBox.textContent = retrieveQuantity(module);
+    quantityBox.textContent = `Number in cart: ${retrieveQuantity(module)}`;
     box.append(quantityBox);
 
     addButton.addEventListener('click', () => {
         addToCart(module.id);
-        quantityBox.textContent = retrieveQuantity(module);
+        quantityBox.textContent = `Number in cart: ${retrieveQuantity(module)}`;
     });
 
-    box.append(addButton);
+    
 
     return box;
 }

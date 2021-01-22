@@ -40,6 +40,15 @@ export function addToCart(id) {
     setCart(cart);
 }
 
+export function removeFromCart(id) {
+    const cart = getCart();
+    let cartItem = findById(id, cart);
+    const index = cart.indexOf(cartItem);
+    cart.splice(index, 1);
+    setCart(cart); 
+    // window.location = '../products/products.html';
+}
+
 export function retrieveQuantity(module) {
     const cart = getCart();
     let quantity = 0;

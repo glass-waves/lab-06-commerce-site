@@ -6,7 +6,8 @@ import { renderTableRows } from '../cart/render-table-row.js';
 import { 
     getCart,
     clearCart,
-    setCart } from '../cart/cart-utils.js';
+    setCart, 
+    removeFromCart} from '../cart/cart-utils.js';
 
 const test = QUnit.test;
 
@@ -25,7 +26,7 @@ test('should receive a module object and return a div element', (expect) => {
 
 
     // Set up your arguments and expectations
-    const expected = `<div class="product-box"><h2 class="title">Qu-Bit Chord V2</h2><img src="../assets/chordV2.jpg" class="module-image"><h3 class="category">Oscillator</h3><h3 class="hp">14 HP</h3><p class="description">Chord v2 is a long-awaited update to the Qu-Bit’s original polyphonic oscillator. While gaining a tremendous reduction in HP size, the module kept all the beloved functionality of its predecessor and even attained a few new tricks up its sleeve.</p><h3 class="price">$299</h3><button value="chord">Add to Cart</button></div>`;
+    const expected = `<div class="product-box"><h2 class="title">Qu-Bit Chord V2</h2><img src="../assets/chordV2.jpg" class="module-image"><h3 class="category">Oscillator</h3><h3 class="hp">14 HP</h3><p class="description">Chord v2 is a long-awaited update to the Qu-Bit’s original polyphonic oscillator. While gaining a tremendous reduction in HP size, the module kept all the beloved functionality of its predecessor and even attained a few new tricks up its sleeve.</p><h3 class="price">$299</h3><button value="chord">Add to Cart</button><p class=\"quantityBox\">Number in cart: 0</p></div>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -165,7 +166,7 @@ test('should receive a cart item and return a completed table row DOM element', 
 
 
     // Set up your arguments and expectations
-    const expected = `<tr><td><img src="../assets/ikarie.jpg"></td><td>BASTL Ikarie Stereo Filter</td><td>3</td><td>$777.00</td></tr>`;
+    const expected = `<tr><td><img src="../assets/ikarie.jpg"></td><td>BASTL Ikarie Stereo Filter</td><td>3</td><td>$777.00</td><td><button>Remove Item</button></td></tr>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -281,6 +282,38 @@ test('calling the function should replace the existing cart with the cart passed
     const actual = getCart();
 
     const expected = newCart;
+
+    expect.deepEqual(actual, expected);
+});
+
+//TESTS SET CART FUNCTION
+test('calling the function should remove an instance of the item with the matching id from the cart', (expect) => {
+    const cart = [{
+        id: 'ikarie',
+        quantity: 3 
+    },
+    {
+        id: 'zadar',
+        quantity: 4
+    }];
+
+    const removedCart = [{
+        id: 'ikarie',
+        quantity: 2 
+    },
+    {
+        id: 'zadar',
+        quantity: 4
+    }];
+
+    const stringyOldCart = JSON.stringify(cart);
+    localStorage.setItem('CART', stringyOldCart);
+
+    removeFromCart('ikarie');
+
+    const actual = getCart();
+
+    const expected = removedCart;
 
     expect.deepEqual(actual, expected);
 });
