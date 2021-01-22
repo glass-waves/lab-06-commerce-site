@@ -42,7 +42,9 @@ export function renderTableRows(cartItem){
         //IF THERE IS STILL AT LEAST ONE IN THE CART, UPDATE QUANTITY ON CART
         if (newCartItem.quantity >= 1) {
             quantityTd.textContent = newCartItem.quantity;
+            renderTotalRow(cart);
             setCart(cart);
+            location.reload();
         }
         //IF THERE THE CART ITEM QUANTITY IS 0, CALL REMOVE FROM CART FUNCTION AND REMOVE PRODUCT ROW
         if (newCartItem.quantity === 0){
@@ -50,6 +52,7 @@ export function renderTableRows(cartItem){
             productRow.remove();
             console.log(cart);
             setCart(cart);
+            location.reload();
         }
     });
     //APPEND ALL TDs TO PRODUCT ROW AND RETURN

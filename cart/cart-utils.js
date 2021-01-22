@@ -46,7 +46,7 @@ export function removeFromCart(id, cart) {
     cart.splice(index, 1);
     console.log(cart);
     setCart(cart); 
-    window.location = '../products/products.html';
+    // window.location = '../products/products.html';
 }
 
 export function retrieveQuantity(module) {
