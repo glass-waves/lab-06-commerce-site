@@ -7,7 +7,7 @@ import {
     getCart,
     clearCart,
     setCart, 
-    removeFromCart} from '../cart/cart-utils.js';
+    removeFromCart } from '../cart/cart-utils.js';
 import { getProducts, addToProducts } from '../admin/admin-utils.js';
 
 const test = QUnit.test;
@@ -18,7 +18,7 @@ test('should receive a module object and return a div element', (expect) => {
         id: 'chord',
         brand: 'Qu-Bit',
         moduleName: 'Chord V2',
-        image: 'chordV2.jpg',
+        image: '../assets/chordV2.jpg',
         category: 'Oscillator',
         size: 14,
         description: 'Chord v2 is a long-awaited update to the Qu-Bit’s original polyphonic oscillator. While gaining a tremendous reduction in HP size, the module kept all the beloved functionality of its predecessor and even attained a few new tricks up its sleeve.',
