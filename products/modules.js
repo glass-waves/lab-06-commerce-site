@@ -48,15 +48,15 @@ export const modules = [
         size: 12,
         description: `Intellijel’s brand new Quad VCA can be used as a four individual VCAs, or as a four-channel mixer. The module offers users the ability to route each individual channel to a separate destination in their system, or use the Mix out for a sum of all four signals. The module features a continually adjustable linear to exponential response curve, and a Boost switch that adds up to 6dB of gain to each channel. `,
         price: 189
-    },
-    {
-        id: 'ripples',
-        brand: 'Mutable Instruments',
-        moduleName: 'Ripples V2 Liquid Filter',
-        image: 'ripples.jpg',
-        category: 'Filter',
-        size: 8,
-        description: 'Ripples from Mutable Instruments is an analog multi-mode filter that sounds huge and features two cutoff slopes. Ripples offers two inputs, one transparent and clean, and one with a drive control that can saturate and distort incoming signals. It even adds enough gain to bring line-level signals into your modular. Ripples includes a high pass, low pass, and band pass filter outputs. The band pass and low pass outputs are switchable between two and four-pole operation, giving two flavors of cutoff slope. The resonance setting sets the slope of the high pass filter.',
-        price: 199
-    }   
+    }
+    // {
+    //     id: 'ripples',
+    //     brand: 'Mutable Instruments',
+    //     moduleName: 'Ripples V2 Liquid Filter',
+    //     image: 'ripples.jpg',
+    //     category: 'Filter',
+    //     size: 8,
+    //     description: 'Ripples from Mutable Instruments is an analog multi-mode filter that sounds huge and features two cutoff slopes. Ripples offers two inputs, one transparent and clean, and one with a drive control that can saturate and distort incoming signals. It even adds enough gain to bring line-level signals into your modular. Ripples includes a high pass, low pass, and band pass filter outputs. The band pass and low pass outputs are switchable between two and four-pole operation, giving two flavors of cutoff slope. The resonance setting sets the slope of the high pass filter.',
+    //     price: 199
+    // }   
 ];

@@ -1,0 +1,13 @@
+body {
+    color: white;
+}
+.form-section {
+    display:flex;
+    justify-content: center;
+}
+form {
+    display:flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+}
