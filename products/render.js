@@ -13,7 +13,7 @@ export function renderModules(module) {
     box.append(moduleName);
     
     const moduleImage = document.createElement('img');
-    moduleImage.src = `../assets/${module.image}`;
+    moduleImage.src = module.image;
     moduleImage.classList.add('module-image');
     box.append(moduleImage);
 

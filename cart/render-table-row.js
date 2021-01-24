@@ -1,8 +1,9 @@
 import { findById } from './utils.js';
 // import { cart } from './cart-data.js';
-import { modules } from '../products/modules.js';
+// import { modules } from '../products/modules.js';
 import { calcSubTotal, calcCartTotal } from './utils.js';
 import { getCart, removeFromCart, setCart } from './cart-utils.js';
+import { getProducts } from '../admin/admin-utils.js';
 
 
 export function renderTableRows(cartItem){
@@ -19,9 +20,10 @@ export function renderTableRows(cartItem){
     const removeButton = document.createElement('button');
 
     //RETRIEVE CORRECT INFO FOR CURRENT CART ITEM FROM MODULES LIST AND STORE IN VARIABLE
+    const modules = getProducts();
     const rowItem = findById(cartItem.id, modules);
     //SET IMAGE TO CORRECT IMAGE AND APPEND TO IMAGE TD
-    productImage.src = `../assets/${rowItem.image}`;
+    productImage.src = rowItem.image;
     productImageTd.appendChild(productImage);
     //SET TEXT CONTENT OF NAME, QUANTITY AND PRICE TDs
     productTd.textContent = `${rowItem.brand} ${rowItem.moduleName}`;
@@ -71,6 +73,7 @@ export function renderTotalRow(cartFromStorage) {
 
     //RUN calcTotalCart FUNCTION WITH CURRENT CART VALUES AND STORE IN CART TOTAL VARIABLE
     const cart = cartFromStorage;
+    const modules = getProducts();
     let cartTotal = calcCartTotal(cart, modules);
     //SET TEXT CONTEND OF TOTAL CALL TO CART TOTAL
     totalTd.textContent = `Cart Total: $${cartTotal}`;
