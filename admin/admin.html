@@ -1,0 +1,60 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="./admin.css">
+    <title>Product Page</title>
+</head>
+
+<body>
+    <header>
+        <h1>Dylan's Synth Shop</h1>
+        <a href="../cart/cart.html">Shopping Cart</a> |
+        <a href="../products/products.html">Products</a> |
+        <a href="../index.html">Home</a>
+    </header>
+    <div class="outer-container">
+        <h3>Add New Product</h3>
+        <section class="form-section">
+            
+            <form id="product-entry-form">
+
+                <label>Product ID:</label>
+                <input type="text" id="product-id" name ="product-id">
+
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" name ="brand">
+
+                <label for="module-name">Module Name:</label>
+                <input type="text" id="module-name" name ="module-name">
+
+                <label for="image">Product Image URL:</label>
+                <input type="text" id="image" name ="image">
+
+                <label for="category">Module Category:</label>
+                <input type="text" id="category" name ="category">
+
+                <label for="size">Module Size(HP):</label>
+                <input type="number" id="size" name ="size">
+
+                <label for="description">Module Description:</label>
+                <input type="text" id="description" name ="description">
+
+                <label for="price">Module Price:</label>
+                <input type="number" id="price" name ="price"> 
+
+                <button id="submit-button">Add Product</button>
+            </form>
+
+        </section>
+    </div>
+    
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

@@ -11,7 +11,7 @@ body {
 table {
     width: 600px;
     text-align: center;
-    border-collapse: collapse;
+
     background-color: white;
     border: solid 7px grey;
 }
@@ -19,6 +19,7 @@ th, td {
     border: solid 2px black;
     padding: 10px;
     vertical-align: middle;
+    border-collapse: collapse;
 }
 td {
     font-size: 20px;

@@ -1,3 +1,7 @@
+import { addToCart, retrieveQuantity } from '../cart/cart-utils.js';
+
+
+
 export function renderModules(module) {
 
     const box = document.createElement('div');
@@ -9,7 +13,7 @@ export function renderModules(module) {
     box.append(moduleName);
     
     const moduleImage = document.createElement('img');
-    moduleImage.src = `../assets/${module.image}`;
+    moduleImage.src = module.image;
     moduleImage.classList.add('module-image');
     box.append(moduleImage);
 
@@ -37,6 +41,18 @@ export function renderModules(module) {
     addButton.setAttribute('value', module.id);
     addButton.textContent = 'Add to Cart';
     box.append(addButton);
+
+    const quantityBox = document.createElement('p');
+    quantityBox.classList.add('quantityBox');
+    quantityBox.textContent = `Number in cart: ${retrieveQuantity(module)}`;
+    box.append(quantityBox);
+
+    addButton.addEventListener('click', () => {
+        addToCart(module.id);
+        quantityBox.textContent = `Number in cart: ${retrieveQuantity(module)}`;
+    });
+
+    
 
     return box;
 }
