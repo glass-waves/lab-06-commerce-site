@@ -1,7 +1,7 @@
-import { addToProducts } from "./admin-utils";
+import { addToProducts} from './admin-utils.js';
 
 const productForm = document.getElementById('product-entry-form');
-
+console.log('loaded');
 productForm.addEventListener('submit', (event) => {
     event.preventDefault();
     console.log('I submitted the form!');
@@ -21,4 +21,5 @@ productForm.addEventListener('submit', (event) => {
     };
 
     addToProducts(newProduct);
+
 });

@@ -45,7 +45,6 @@ export function removeFromCart(id, cart) {
     const index = cart.indexOf(cartItem);
     cart.splice(index, 1);
     setCart(cart); 
-    // window.location = '../products/products.html';
 }
 
 export function retrieveQuantity(module) {

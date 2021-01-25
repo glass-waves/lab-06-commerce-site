@@ -14,11 +14,14 @@
 <body>
     <header>
         <h1>Dylan's Synth Shop</h1>
-        <a href="../products/products.html">Products</a>
+        <a href="../cart/cart.html">Shopping Cart</a> |
+        <a href="../products/products.html">Products</a> |
         <a href="../index.html">Home</a>
     </header>
     <div class="outer-container">
+        <h3>Add New Product</h3>
         <section class="form-section">
+            
             <form id="product-entry-form">
 
                 <label>Product ID:</label>
@@ -30,7 +33,7 @@
                 <label for="module-name">Module Name:</label>
                 <input type="text" id="module-name" name ="module-name">
 
-                <label for="image">Product Image:</label>
+                <label for="image">Product Image URL:</label>
                 <input type="text" id="image" name ="image">
 
                 <label for="category">Module Category:</label>
@@ -42,16 +45,16 @@
                 <label for="description">Module Description:</label>
                 <input type="text" id="description" name ="description">
 
-                <label for="price">Module Size(HP):</label>
+                <label for="price">Module Price:</label>
                 <input type="number" id="price" name ="price"> 
 
-                <button id="submit-button">Submit</button>
+                <button id="submit-button">Add Product</button>
             </form>
 
         </section>
     </div>
     
-    <script type="module" src="admin.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,5 @@
 import { findById } from './utils.js';
-// import { cart } from './cart-data.js';
-// import { modules } from '../products/modules.js';
+// import { cart } from './cart-data.js';\
 import { calcSubTotal, calcCartTotal } from './utils.js';
 import { getCart, removeFromCart, setCart } from './cart-utils.js';
 import { getProducts } from '../admin/admin-utils.js';

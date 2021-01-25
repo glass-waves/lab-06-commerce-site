@@ -1,6 +1,6 @@
-import { modules } from '../products/modules.js';
+// import { modules } from '../products/modules.js';
 import { getCart } from './cart-utils.js';
-// import { cart } from './cart-data.js';
+import { getProducts } from '../admin/admin-utils.js';
 import { renderTableRows, renderTotalRow } from './render-table-row.js';
 import { calcCartTotal } from './utils.js';
 
@@ -34,6 +34,7 @@ if (cart.length === 0) {
 } else {
     //ADD EVENT LISTENER TO ORDER BUTTON
     orderButton.addEventListener('click', () =>{
+        const modules = getProducts();
         const updatedCart = getCart();
         //CALCULATE CART TOTAL FROM STORED CART AND MODULE LIST
         const cartTotal = calcCartTotal(updatedCart, modules);
